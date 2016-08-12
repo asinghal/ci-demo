@@ -1,0 +1,32 @@
+[
+    {
+      "name": "${container_name}",
+      "image": "${docker_image}",
+      "cpu": 1000,
+      "memory": 900,
+      "entryPoint": [],
+      "environment": [
+                      {
+                        "name": "NODE_ENV",
+                        "value": "canary"
+                      }
+                    ],
+      "command": [],
+      "portMappings": [
+        {
+          "hostPort": 80,
+          "containerPort": ${container_port},
+          "protocol": "tcp"
+        },
+        {
+          "hostPort": 443,
+          "containerPort": ${container_port2},
+          "protocol": "tcp"
+        }
+      ],
+      "volumesFrom": [],
+      "links": [],
+      "mountPoints": [],
+      "essential": true
+    }
+]

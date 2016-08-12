@@ -13,8 +13,8 @@ ECS_CLUSTER=$3
 REPO_NAME=$4
 ENVIRONMENT_NAME=$5
 BUILD_TAG=`date +%Y%m%d%H%M`"-`git rev-parse --short $CIRCLE_SHA1`"
-REGION="us-west-2"
-AWS_REGION="us-west-2"
+REGION="us-east-1"
+AWS_REGION="us-east-1"
 
 configure_aws_cli() {
 	aws --version
