@@ -1,0 +1,31 @@
+{
+  "name": "ci-demo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "lab": "NODE_ENV=test ./node_modules/.bin/lab",
+    "test": "NODE_ENV=test npm run lab"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/asinghal/ci-demo.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/asinghal/ci-demo/issues"
+  },
+  "homepage": "https://github.com/asinghal/ci-demo#readme",
+  "dependencies": {
+    "hapi": "^14.1.0",
+    "mocha": "^3.0.2"
+  },
+  "devDependencies": {
+    "code": "^3.0.2",
+    "eslint-config-hapi": "^10.0.0",
+    "eslint-plugin-hapi": "^4.0.0",
+    "lab": "^10.9.0",
+    "sinon": "^1.17.5"
+  }
+}
