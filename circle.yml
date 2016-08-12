@@ -21,4 +21,4 @@ deployment:
     branch: master
     commands:
       - docker build -f "Dockerfile" -t ci-demo .
-      - ./deploy.sh "ci-demo" "ci-demo" "ci-demo_canary" "ci-demo-canary" "canary"
+      - ./deploy.sh "ci-demo" "ci-demo" "ci-demo" "ci-demo" "canary"

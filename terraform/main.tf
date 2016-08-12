@@ -254,3 +254,8 @@ resource "aws_ecs_service" "app" {
     container_port = "3000"
   }
 }
+
+
+resource "aws_ecr_repository" "registry" {
+  name = "${var.name}"
+}
