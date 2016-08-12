@@ -1,0 +1,24 @@
+machine:
+  node:
+    version: v6.1.0
+  pre:
+    - pip install awscli
+    - sudo curl -L -o /usr/bin/docker 'https://s3-external-1.amazonaws.com/circle-downloads/docker-1.9.0-circleci'
+    - sudo chmod 0755 /usr/bin/docker
+  services:
+    - docker
+
+dependencies:
+  cache_directories:
+    - "node_modules"
+
+  override:
+    - npm install -g json semver
+    - npm install
+
+deployment:
+  canary:
+    branch: master
+    commands:
+      - docker build -f "Dockerfile" -t ci-demo .
+      - ./deploy.sh "ci-demo" "ci-demo" "ci-demo_canary" "ci-demo-canary" "canary"
