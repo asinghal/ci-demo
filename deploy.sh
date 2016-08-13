@@ -40,18 +40,11 @@ make_task_def(){
           "name": "NODE_ENV",
           "value": "%s"
         }
-			],
-			"logConfiguration": {
-				"logDriver": "syslog",
-				"options": {
-						"tag": "%s",
-						"syslog-address": "%s"
-				}
-      }
+			]
 		}
 	]'
 
-	task_def=$(printf "$task_template" "$TASK_NAME" $AWS_ACCOUNT_ID "$REGION" "$REPO_NAME" $BUILD_TAG $ENVIRONMENT_NAME "$ECS_CLUSTER" "tcp://tedd-berlin-logstash-elb-205018813.eu-central-1.elb.amazonaws.com:80")
+	task_def=$(printf "$task_template" "$TASK_NAME" $AWS_ACCOUNT_ID "$REGION" "$REPO_NAME" $BUILD_TAG $ENVIRONMENT_NAME)
 }
 
 register_definition() {
